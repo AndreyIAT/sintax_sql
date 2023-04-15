@@ -28,57 +28,39 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    object ComboBox1: TComboBox
+    object Label3: TLabel
       Left = 16
-      Top = 23
-      Width = 161
-      Height = 24
-      TabOrder = 0
-      TextHint = #1042#1099#1073#1077#1088#1080#1090#1077' '#1057#1059#1041#1044
-      Items.Strings = (
-        'SQL Server'
-        'PostgreSQL')
+      Top = 24
+      Width = 479
+      Height = 19
+      Caption = #1044#1083#1103' '#1085#1072#1095#1072#1083#1072' '#1088#1072#1073#1086#1090#1099' '#1087#1088#1086#1075#1088#1072#1084#1084#1099' '#1085#1072#1078#1084#1080#1090#1077' '#1082#1085#1086#1087#1082#1091' "'#1055#1086#1076#1082#1083#1102#1095#1080#1090#1100#1089#1103'"'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
     end
-    object Edit1: TEdit
-      Left = 192
-      Top = 23
-      Width = 209
-      Height = 24
-      TabOrder = 1
-      TextHint = #1042#1074#1077#1076#1080#1090#1077' '#1080#1084#1103' '#1089#1077#1088#1074#1077#1088#1072
-    end
-    object Edit2: TEdit
-      Left = 16
-      Top = 59
-      Width = 161
-      Height = 24
-      TabOrder = 2
-      TextHint = #1042#1074#1077#1076#1080#1090#1077' '#1080#1084#1103' '#1041#1044
-    end
-    object Edit3: TEdit
-      Left = 192
-      Top = 59
-      Width = 129
-      Height = 24
-      TabOrder = 3
-      TextHint = #1048#1084#1103' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1103
-    end
-    object Edit4: TEdit
-      Left = 336
-      Top = 59
-      Width = 129
-      Height = 24
-      PasswordChar = '*'
-      TabOrder = 4
-      TextHint = #1055#1072#1088#1086#1083#1100
+    object Label4: TLabel
+      Left = 144
+      Top = 56
+      Width = 5
+      Height = 19
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
     end
     object Button1: TButton
-      Left = 471
-      Top = 59
+      Left = 16
+      Top = 54
       Width = 106
       Height = 25
       Caption = #1055#1086#1076#1082#1083#1102#1095#1080#1090#1100#1089#1103
-      TabOrder = 5
+      TabOrder = 0
+      OnClick = Button1Click
     end
   end
   object GroupBox2: TGroupBox
@@ -127,6 +109,11 @@ object Form1: TForm1
       Height = 24
       TabOrder = 1
       TextHint = #1042#1099#1073#1077#1088#1080#1090#1077' '#1082#1086#1084#1072#1085#1076#1091
+      Items.Strings = (
+        'SELECT'
+        'INSERT'
+        'UPDATE'
+        'DELETE')
     end
     object CheckListBox1: TCheckListBox
       Left = 16
@@ -150,12 +137,17 @@ object Form1: TForm1
       TabOrder = 4
     end
     object Button2: TButton
-      Left = 352
+      Left = 392
       Top = 32
-      Width = 225
+      Width = 153
       Height = 25
       Caption = #1057#1086#1089#1090#1072#1074#1080#1090#1100' '#1079#1072#1087#1088#1086#1089
       TabOrder = 5
     end
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'UDL|*.udl'
+    Left = 528
+    Top = 48
   end
 end
