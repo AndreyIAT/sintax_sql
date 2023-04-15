@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2023.04.15 23:39:28.057,=C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2023.04.15 23:39:28.165,=C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2023.04.15 23:39:37.008,C:\Users\Andrey\Desktop\ИрНИТУ\4 курс\Проектная деятельность\sintax_sql\sintax_sql\Unit1.cpp=C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2023.04.15 23:39:37.008,C:\Users\Andrey\Desktop\ИрНИТУ\4 курс\Проектная деятельность\sintax_sql\sintax_sql\Unit1.h=C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
-    <Transaction>2023.04.15 23:39:37.008,C:\Users\Andrey\Desktop\ИрНИТУ\4 курс\Проектная деятельность\sintax_sql\sintax_sql\Unit1.dfm=C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2023.04.15 23:39:38.906,C:\Users\Andrey\Desktop\ИрНИТУ\4 курс\Проектная деятельность\sintax_sql\sintax_sql\Project1PCH1.h=C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2023.04.15 23:39:40.699,C:\Users\Andrey\Desktop\ИрНИТУ\4 курс\Проектная деятельность\sintax_sql\sintax_sql\Project1.cbproj=C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.008,C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Andrey\Desktop\ИрНИТУ\4 курс\Проектная деятельность\sintax_sql\sintax_sql\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.008,C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\Andrey\Desktop\ИрНИТУ\4 курс\Проектная деятельность\sintax_sql\sintax_sql\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.699,C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\Andrey\Desktop\ИрНИТУ\4 курс\Проектная деятельность\sintax_sql\sintax_sql\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.008,C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\Andrey\Desktop\ИрНИТУ\4 курс\Проектная деятельность\sintax_sql\sintax_sql\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.057,=C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.906,C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\Andrey\Desktop\ИрНИТУ\4 курс\Проектная деятельность\sintax_sql\sintax_sql\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.165,=C:\Users\Andrey\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
   </Transactions>
 </BorlandProject>
