@@ -77,9 +77,6 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 1
-    ExplicitTop = 168
-    ExplicitWidth = 699
-    ExplicitHeight = 472
     object Label1: TLabel
       Left = 16
       Top = 66
@@ -101,6 +98,7 @@ object Form1: TForm1
       Height = 24
       TabOrder = 0
       TextHint = #1042#1099#1073#1077#1088#1080#1090#1077' '#1090#1072#1073#1083#1080#1094#1091
+      OnChange = ComboBox2Change
     end
     object ComboBox3: TComboBox
       Left = 176
@@ -143,6 +141,7 @@ object Form1: TForm1
       Height = 25
       Caption = #1057#1086#1089#1090#1072#1074#1080#1090#1100' '#1079#1072#1087#1088#1086#1089
       TabOrder = 5
+      OnClick = Button2Click
     end
   end
   object OpenDialog1: TOpenDialog
