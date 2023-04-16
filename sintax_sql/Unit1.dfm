@@ -42,9 +42,9 @@ object Form1: TForm1
       ParentFont = False
     end
     object Label4: TLabel
-      Left = 144
+      Left = 320
       Top = 56
-      Width = 5
+      Width = 65
       Height = 19
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
@@ -54,13 +54,24 @@ object Form1: TForm1
       ParentFont = False
     end
     object Button1: TButton
-      Left = 16
-      Top = 54
+      Left = 191
+      Top = 56
       Width = 106
       Height = 25
       Caption = #1055#1086#1076#1082#1083#1102#1095#1080#1090#1100#1089#1103
       TabOrder = 0
       OnClick = Button1Click
+    end
+    object ComboBox1: TComboBox
+      Left = 16
+      Top = 56
+      Width = 145
+      Height = 24
+      TabOrder = 1
+      TextHint = #1042#1099#1073#1077#1088#1080#1090#1077' '#1057#1059#1041#1044
+      Items.Strings = (
+        'SQL Server'
+        'PostgreSQL')
     end
   end
   object GroupBox2: TGroupBox

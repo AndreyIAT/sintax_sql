@@ -17,6 +17,25 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
 }
+
+// запрос получения списка таблиц
+AnsiString query_get_table() {
+	if (Form1->ComboBox1->ItemIndex == 0) {
+		return "SELECT [name] FROM sys.objects WHERE type in (N'U')";
+	} else {
+		return "SELECT table_name AS name FROM information_schema.tables WHERE table_schema = 'public'";
+    }
+}
+
+// запрос получения списка колонок
+AnsiString query_get_columns(AnsiString name_t) {
+	if (Form1->ComboBox1->ItemIndex == 0) {
+		return "SELECT COLUMN_NAME AS [name_c] FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name='" + name_t + "'";
+	} else {
+		return "SELECT column_name AS name_c FROM information_schema.columns WHERE table_schema = 'public' AND table_name = '" + name_t + "'";
+	}
+}
+
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
@@ -27,6 +46,11 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 			table_column[i][j] = "";
 	i = 0;
 	j = 0;
+
+    if (ComboBox1->ItemIndex == -1) {
+		Label4->Caption = "Выберите СУБД!";
+		return;
+	}
 
 	if (OpenDialog1->Execute()) {
 		try {
@@ -40,7 +64,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 			// получаем список таблиц
 			TADOQuery* T_Query = new TADOQuery(this);
 			T_Query->Connection = Connect;
-			T_Query->SQL->Add("SELECT [name] FROM sys.objects WHERE type in (N'U')");
+			T_Query->SQL->Add(query_get_table());
 			T_Query->Active = true;
 
 			TADOQuery* C_Query = new TADOQuery(this);
@@ -56,7 +80,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 				// получаем список колонок текущей таблицы
 				C_Query->Active = false;
 				C_Query->SQL->Clear();
-				C_Query->SQL->Add("SELECT COLUMN_NAME AS [name_c] FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name='" + name_t + "'");
+				C_Query->SQL->Add(query_get_columns(name_t));
 				C_Query->Active = true;
 
 				j = 1;
@@ -169,7 +193,7 @@ void building_insert()
 			_query = _query + "'values" + IntToStr(i) + "', ";
 		}
 		if (_query.Length() > 0) {
-			_query = "(" + _query.SubString(0, _query.Length() - 2) + ")";
+			_query = "VALUES (" + _query.SubString(0, _query.Length() - 2) + ")";
 			Form1->Memo1->Lines->Add(_query);
         }
 	}
@@ -208,7 +232,6 @@ void building_update()
 			_query = "WHERE " + _query.SubString(0, _query.Length() - 5);
 			Form1->Memo1->Lines->Add(_query);
 		}
-
 	}
 }
 
@@ -225,8 +248,8 @@ void building_delete()
 	}
 
 	if (_query.Length() > 0) {
-		Form1->Memo1->Lines->Add("DELETE " + Form1->ComboBox2->Text);
-		_query = _query.SubString(0, _query.Length() - 5);
+		Form1->Memo1->Lines->Add("DELETE FROM " + Form1->ComboBox2->Text);
+		_query = "WHERE " + _query.SubString(0, _query.Length() - 5);
 		Form1->Memo1->Lines->Add(_query);
 	}
 }
@@ -237,23 +260,23 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 
 	Memo1->Lines->Clear();
 
-	if (ComboBox2->Text == "" || ComboBox3->Text == "") {
+	if (ComboBox2->ItemIndex == -1 || ComboBox3->ItemIndex == -1) {
 		return;
 	}
 
-	if (ComboBox3->Text == "SELECT") {
+	if (ComboBox3->ItemIndex == 0) {
 		building_select();
 	}
 
-	if (ComboBox3->Text == "UPDATE") {
-		building_update();
-	}
-
-	if (ComboBox3->Text == "INSERT") {
+	if (ComboBox3->ItemIndex == 1) {
 		building_insert();
 	}
 
-	if (ComboBox3->Text == "DELETE") {
+	if (ComboBox3->ItemIndex == 2) {
+		building_update();
+	}
+
+	if (ComboBox3->ItemIndex == 3) {
 		building_delete();
 	}
 }

@@ -30,6 +30,7 @@ __published:	// IDE-managed Components
 	TOpenDialog *OpenDialog1;
 	TLabel *Label3;
 	TLabel *Label4;
+	TComboBox *ComboBox1;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall ComboBox2Change(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
@@ -42,6 +43,9 @@ void building_select();
 void building_insert();
 void building_update();
 void building_delete();
+
+AnsiString query_get_table();
+AnsiString query_get_columns(AnsiString name_t);
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;
 //---------------------------------------------------------------------------
